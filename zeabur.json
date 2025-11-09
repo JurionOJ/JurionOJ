@@ -1,9 +1,0 @@
-{
-  "build": {
-    "command": "npm install && npm run build && npm install -g hydrooj"
-  },
-  "start": {
-    "command": "chmod +x init.sh && ./init.sh"
-  },
-  "rootDirectory": "."
-}
