@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: JurionOJ
+    env: node
+    buildCommand: |
+      npm install
+      npx grunt build
+      npm install -g hydrooj
+    startCommand: chmod +x init.sh && ./init.sh
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HYDRO_DB
+        value: sqlite:///data/hydro.db
