@@ -1,0 +1,12 @@
+name: JurionOJ
+build:
+  command: |
+    pkg install -y python3 make g++ git
+    npm install
+    npx grunt build
+    npm install -g hydrooj
+run:
+  command: chmod +x init.sh && ./init.sh
+ports:
+  - port: 8888
+    http: {}
