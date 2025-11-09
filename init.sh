@@ -1,6 +1,12 @@
 #!/bin/bash
 
-echo "🚀 Hydro OJ 启动中..."
+# 先执行 Hydro 的构建流程
+echo "🚀 执行 Hydro 构建流程..."
+npm run build
+
+# 安装 hydrooj CLI
+echo "📦 安装 Hydro CLI..."
+npm install -g hydrooj
 
 # 等待系统准备
 sleep 10
@@ -30,6 +36,6 @@ else
     echo "⚡ 系统已初始化，直接启动..."
 fi
 
-# 启动服务
+# 启动服务（使用 Hydro 原生的 start 命令）
 echo "🌐 启动 Hydro OJ 服务..."
-npx hydrooj
+exec npm start
